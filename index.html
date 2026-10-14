@@ -190,3 +190,26 @@
 
 </body>
 </html>
+
+const searchParams = new URLSearchParams(window.location.search);
+const certId = searchParams.get('cert');
+
+if (certId) {
+  fetch('certificates.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data[certId]) {
+        const cert = data[certId];
+        document.getElementById('cert-no').textContent = certId;
+        document.getElementById('company-name').textContent = cert.company;
+        document.getElementById('standard-val').textContent = cert.standard;
+        document.getElementById('issue-val').textContent = cert.issue;
+        document.getElementById('expiry-val').textContent = cert.expiry;
+        document.getElementById('cert-body').textContent = cert.body || "Americo";
+        document.getElementById('accred-body').textContent = cert.accred || "UAF";
+      } else {
+        alert("Certificate Not Found / Invalid Certificate Number");
+      }
+    })
+    .catch(err => console.error("Data load error:", err));
+}
