@@ -9,157 +9,183 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
+
     body {
-      background: linear-gradient(135deg, #4b52b2 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #4f58c7 0%, #68489c 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 30px 15px;
     }
-    .card {
+
+    .container {
       background: #ffffff;
-      border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 520px;
+      border-radius: 24px;
+      max-width: 580px;
       width: 100%;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      padding: 50px 35px 35px 35px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
       text-align: center;
     }
-    .brand-title {
-      font-size: 32px;
+
+    .main-title {
+      font-size: 38px;
       font-weight: 700;
-      color: #4361ee;
-      margin-bottom: 5px;
+      color: #4b66ea;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
-    .sub-title {
-      color: #6c757d;
-      font-size: 15px;
-      margin-bottom: 25px;
+
+    .sub-heading {
+      color: #636b74;
+      font-size: 16px;
+      margin-bottom: 28px;
     }
-    .alert-success {
+
+    .status-alert {
       background-color: #d1e7dd;
       color: #0f5132;
-      padding: 12px;
       border-radius: 8px;
-      font-size: 14px;
+      padding: 12px 18px;
+      font-size: 14.5px;
       font-weight: 600;
-      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
     }
-    .details-table {
+
+    .details-box {
       background-color: #f8f9fa;
-      border-radius: 12px;
-      padding: 15px 20px;
-      margin-bottom: 25px;
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin-bottom: 26px;
       text-align: left;
     }
-    .row {
+
+    .item-row {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #e9ecef;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf0f2;
       font-size: 14px;
+      line-height: 1.45;
     }
-    .row:last-child {
+
+    .item-row:last-child {
       border-bottom: none;
     }
-    .label {
+
+    .label-col {
       color: #495057;
       font-weight: 600;
-      width: 45%;
+      width: 42%;
     }
-    .value {
+
+    .value-col {
       color: #212529;
       font-weight: 500;
-      width: 55%;
+      width: 58%;
       text-align: right;
       word-break: break-word;
     }
-    .info-footer {
-      background-color: #e7f1ff;
-      color: #0c63e4;
-      padding: 10px;
+
+    .info-badge {
+      background-color: #def0ff;
+      color: #085cb8;
       border-radius: 8px;
+      padding: 11px 16px;
       font-size: 13px;
-      margin-bottom: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-bottom: 26px;
     }
-    .support-text {
-      color: #6c757d;
-      font-size: 13px;
+
+    .footer-support {
+      color: #71777d;
+      font-size: 12.5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="brand-title">Americo</div>
-    <div class="sub-title">Certificate Verification System</div>
+  <div class="container">
+    <h1 class="main-title">Americo</h1>
+    <p class="sub-heading">Certificate Verification System</p>
 
-    <div class="alert-success">
-      ✅ Certificate Information Retrieved Successfully
+    <div class="status-alert">
+      <span>✅</span> Certificate Information Retrieved Successfully
     </div>
 
-    <div class="details-table">
-      <div class="row">
-        <span class="label">Certificate Number:</span>
-        <span class="value" id="cert-no">-</span>
+    <div class="details-box">
+      <div class="item-row">
+        <span class="label-col">Certificate Number:</span>
+        <span class="value-col" id="cert-no">-</span>
       </div>
-      <div class="row">
-        <span class="label">Company Name:</span>
-        <span class="value" id="company-name">-</span>
+
+      <div class="item-row">
+        <span class="label-col">Company Name:</span>
+        <span class="value-col" id="company-name">-</span>
       </div>
-      <div class="row">
-        <span class="label">Certificate Standard:</span>
-        <span class="value" id="standard">-</span>
+
+      <div class="item-row">
+        <span class="label-col">Certificate Standard:</span>
+        <span class="value-col" id="standard-val">-</span>
       </div>
-      <div class="row">
-        <span class="label">Issue Date:</span>
-        <span class="value" id="issue-date">-</span>
+
+      <div class="item-row">
+        <span class="label-col">Issue Date:</span>
+        <span class="value-col" id="issue-val">-</span>
       </div>
-      <div class="row">
-        <span class="label">Expiry Date:</span>
-        <span class="value" id="expiry-date">-</span>
+
+      <div class="item-row">
+        <span class="label-col">Expiry Date:</span>
+        <span class="value-col" id="expiry-val">-</span>
       </div>
-      <div class="row">
-        <span class="label">Certification Body:</span>
-        <span class="value" id="body-name">Americo</span>
+
+      <div class="item-row">
+        <span class="label-col">Certification Body:</span>
+        <span class="value-col" id="cert-body">Americo</span>
       </div>
-      <div class="row">
-        <span class="label">Accreditation Body:</span>
-        <span class="value" id="accred-body">UAF</span>
+
+      <div class="item-row">
+        <span class="label-col">Accreditation Body:</span>
+        <span class="value-col" id="accred-body">UAF</span>
       </div>
     </div>
 
-    <div class="info-footer">
-      📱 This information was retrieved by scanning a QR code on your certificate
+    <div class="info-badge">
+      <span>📱</span> This information was retrieved by scanning a QR code on your certificate
     </div>
 
-    <div class="support-text">
+    <div class="footer-support">
       For verification inquiries, contact our support team.
     </div>
   </div>
 
   <script>
-    // URL se query parameters read karne ka logic
-    const params = new URLSearchParams(window.location.search);
+    // URL parameters read kar ke elements ko populate karne ka script
+    const searchParams = new URLSearchParams(window.location.search);
 
-    if (params.get('cert')) {
-      document.getElementById('cert-no').innerText = params.get('cert');
-    }
-    if (params.get('company')) {
-      document.getElementById('company-name').innerText = params.get('company');
-    }
-    if (params.get('standard')) {
-      document.getElementById('standard').innerText = params.get('standard');
-    }
-    if (params.get('issue')) {
-      document.getElementById('issue-date').innerText = params.get('issue');
-    }
-    if (params.get('expiry')) {
-      document.getElementById('expiry-date').innerText = params.get('expiry');
-    }
+    const certParam = searchParams.get('cert');
+    const compParam = searchParams.get('company');
+    const stdParam = searchParams.get('standard');
+    const issueParam = searchParams.get('issue');
+    const expParam = searchParams.get('expiry');
+
+    if (certParam) document.getElementById('cert-no').textContent = certParam;
+    if (compParam) document.getElementById('company-name').textContent = compParam;
+    if (stdParam) document.getElementById('standard-val').textContent = stdParam;
+    if (issueParam) document.getElementById('issue-val').textContent = issueParam;
+    if (expParam) document.getElementById('expiry-val').textContent = expParam;
   </script>
 
 </body>
