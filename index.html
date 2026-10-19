@@ -171,26 +171,6 @@
     </div>
   </div>
 
-  <script>
-    // URL parameters read kar ke elements ko populate karne ka script
-    const searchParams = new URLSearchParams(window.location.search);
-
-    const certParam = searchParams.get('cert');
-    const compParam = searchParams.get('company');
-    const stdParam = searchParams.get('standard');
-    const issueParam = searchParams.get('issue');
-    const expParam = searchParams.get('expiry');
-
-    if (certParam) document.getElementById('cert-no').textContent = certParam;
-    if (compParam) document.getElementById('company-name').textContent = compParam;
-    if (stdParam) document.getElementById('standard-val').textContent = stdParam;
-    if (issueParam) document.getElementById('issue-val').textContent = issueParam;
-    if (expParam) document.getElementById('expiry-val').textContent = expParam;
-  </script>
-
-</body>
-</html>
-
 const searchParams = new URLSearchParams(window.location.search);
 const certId = searchParams.get('cert');
 
